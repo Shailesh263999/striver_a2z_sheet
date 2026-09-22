@@ -1,0 +1,25 @@
+class Solution {
+public:
+    bool isArmstrong(int n) {
+        int original = n;
+        int temp = n;
+        int digits = 0;
+
+        while (temp > 0) {
+            digits++;
+            temp = temp / 10;
+        }
+
+        int sum = 0;
+        temp = n;
+
+        
+        while (temp > 0) {
+            int digit = temp % 10;
+            sum += pow(digit, digits);
+            temp = temp / 10;
+        }
+
+        return sum == original;
+    }
+};
